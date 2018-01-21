@@ -778,13 +778,8 @@ int QwtScaleWidget::dimForLength( int length, const QFont &scaleFont ) const
 */
 void QwtScaleWidget::getBorderDistHint( int &start, int &end ) const
 {
-    d_data->scaleDraw->getBorderDistHint( font(), start, end );
-
-    if ( start < d_data->minBorderDist[0] )
-        start = d_data->minBorderDist[0];
-
-    if ( end < d_data->minBorderDist[1] )
-        end = d_data->minBorderDist[1];
+    start = d_data->minBorderDist[0];
+    end = d_data->minBorderDist[1];
 }
 
 /*!
