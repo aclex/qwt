@@ -873,21 +873,7 @@ Qt::Alignment QwtScaleDraw::labelAlignment() const
 */
 int QwtScaleDraw::maxLabelWidth( const QFont &font ) const
 {
-    double maxWidth = 0.0;
-
-    const QList<double> &ticks = scaleDiv().ticks( QwtScaleDiv::MajorTick );
-    for ( int i = 0; i < ticks.count(); i++ )
-    {
-        const double v = ticks[i];
-        if ( scaleDiv().contains( v ) )
-        {
-            const double w = labelSize( font, ticks[i] ).width();
-            if ( w > maxWidth )
-                maxWidth = w;
-        }
-    }
-
-    return qCeil( maxWidth );
+	return labelSize(font, 9e5).width();
 }
 
 /*!
